@@ -85,7 +85,6 @@ else:
 # SETTING SYSTEM CLOCK
 
 if not month == 0:
-    
     execute = open("time.vbs", "w+")
     execute.write("Set oShell = CreateObject (\"Wscript.Shell\")" + "\n" + "Dim srtArgs" + "\n" + "strArgs = \"cmd /c time.bat\"" + "\n" + "oShell.Run strArgs, 0, false")
     
