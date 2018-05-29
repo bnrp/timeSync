@@ -85,11 +85,15 @@ else:
 # SETTING SYSTEM CLOCK
 
 if not month == 0:
+    
+    execute = open("time.vbs", "w+")
+    execute.write("Set oShell = CreateObject (\"Wscript.Shell\")" + "\n" + "Dim srtArgs" + "\n" + "strArgs = \"cmd /c time.bat\"" + "\n" + "oShell.Run strArgs, 0, false")
+    
     execute = open("time.bat", "w+")
-    execute.write("date " + str(month) + "-" + str(day) + "-" + str(year) + "\n" + "time " + str(hour) + ":" + str(minute) + ":" + str(second) + "\n" + "del %0")
+    execute.write("date " + str(month) + "-" + str(day) + "-" + str(year) + "\n" + "time " + str(hour) + ":" + str(minute) + ":" + str(second) + "\n" + "del /f C:\\Users\\BenPC\\timeSync\\time.vbs" + "\n" + "del %0")
 
     path = r"C:\Users\BenPC\timeSync"
-    file = "runthetime.vbs"
+    file = "time.vbs"
     os.startfile(path+'\\'+file)
 else:
     exit()
