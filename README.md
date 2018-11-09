@@ -1,2 +1,2 @@
 # timeSync
-Updates my computer time via internet.
+Updates my computer time via internet as windows doesn't for whatever reason.
